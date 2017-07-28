@@ -2,12 +2,11 @@ package com.liferay.sandbox
 
 import org.junit.Assert
 import org.openqa.selenium.By
-import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.firefox.FirefoxDriver
 import java.util.concurrent.TimeUnit
 
 open class BasePageObject {
+    val webDriver = FirefoxInstance.hashi()
 
     fun assertText(locator : String, value : String) {
         val webElement = getWebElement(locator)
@@ -18,7 +17,7 @@ open class BasePageObject {
 
     fun assertVisible(locator : String) {
         val webElement = getWebElement(locator)
-        Assert.assertEquals(true, webElement.isDisplayed())
+        Assert.assertEquals(true, webElement.isDisplayed)
     }
 
     fun click(locator : String) {
@@ -47,8 +46,8 @@ open class BasePageObject {
     }
 
     fun getWebElements(locator : String) : List<WebElement> {
-        webdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
-        return webdriver.findElements(By.xpath(locator))
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
+        return webDriver.findElements(By.xpath(locator))
     }
 
     fun isVisible(locator : String) : Boolean {
@@ -57,16 +56,16 @@ open class BasePageObject {
             return false
         }
         else {
-            return webElements[0].isDisplayed()
+            return webElements[0].isDisplayed
         }
     }
 
     fun open(url : String) {
-        webdriver.get(url)
+        webDriver.get(url)
     }
 
     fun quit() {
-        webdriver.quit()
+        webDriver.quit()
     }
 
     fun type(locator : String, value : String) {
@@ -80,11 +79,5 @@ open class BasePageObject {
 
         type(locator, text)
     }
-}
-
-val webdriver = getWebDriver()
-
-fun getWebDriver() : WebDriver {
-    return FirefoxDriver()
 }
 
