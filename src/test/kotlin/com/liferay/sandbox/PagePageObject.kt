@@ -10,8 +10,9 @@ class PagePageObject : BasePageObject() {
 
         click(publicPageEllipsisLocator)
         clickLink("Add Public Page")
-        typeInput(pageName, "Name")
+        typeInput("Name", pageName)
         clickButton("Add Page")
+        open("http://localhost:8080")
         assertVisible("//a[contains(.,'$pageName')]")
     }
 }

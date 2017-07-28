@@ -8,7 +8,6 @@ import org.openqa.selenium.firefox.FirefoxDriver
 import java.util.concurrent.TimeUnit
 
 open class BasePageObject {
-    val webdriver = getWebDriver()
 
     fun assertText(locator : String, value : String) {
         val webElement = getWebElement(locator)
@@ -41,11 +40,14 @@ open class BasePageObject {
 
     fun getWebElement(locator : String) : WebElement {
         val webElements : List<WebElement> = getWebElements(locator)
+        if (webElements.isEmpty()) {
+            println("Unable to find : \"$locator\"")
+        }
         return webElements[0]
     }
 
     fun getWebElements(locator : String) : List<WebElement> {
-        webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS)
+        webdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
         return webdriver.findElements(By.xpath(locator))
     }
 
@@ -80,6 +82,9 @@ open class BasePageObject {
     }
 }
 
+val webdriver = getWebDriver()
+
 fun getWebDriver() : WebDriver {
     return FirefoxDriver()
 }
+
