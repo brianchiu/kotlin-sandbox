@@ -11,6 +11,6 @@ Scenario: Login
     Then I can see the user avatar image
 
 Scenario: Add a web content
-	And I add a page named "Test Page"
+	When I add a page named "Test Page"
 	And I navigate to "Content" > "Web Content" in the Product Menu
 	Then I add a web content with title "Web Content Title" in the Admin Portlet
