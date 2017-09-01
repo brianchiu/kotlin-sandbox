@@ -1,7 +1,5 @@
 package com.liferay.sandbox
 
-import cucumber.api.java.en.When
-
 class ProductMenuPageObject : BasePageObject() {
     fun expandProductMenu() {
         val productMenuOpened = "//div[contains(@id,'sidenavSliderId') and " +
