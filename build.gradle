@@ -14,6 +14,9 @@ apply plugin: "kotlin"
 
 repositories {
 	mavenCentral()
+	maven {
+		url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+	}
 }
 
 sourceSets {
@@ -28,8 +31,11 @@ sourceSets {
 }
 
 dependencies {
+	compile "com.liferay:com.liferay.poshi.runner:1.0.64"
+	compile "dom4j:dom4j:1.6.1"
 	compile "org.jetbrains.kotlin:kotlin-stdlib"
 	compile "org.seleniumhq.selenium:selenium-java:2.53.1"
+	compile "org.sikuli:sikuli-api:1.2.0"
 	testCompile "info.cukes:cucumber-java:1.2.5"
 	testCompile "info.cukes:cucumber-junit:1.2.5"
 }
