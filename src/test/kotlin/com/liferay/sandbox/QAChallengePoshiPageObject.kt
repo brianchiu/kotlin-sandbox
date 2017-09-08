@@ -2,8 +2,6 @@ package com.liferay.sandbox;
 
 import com.liferay.poshi.runner.selenium.SeleniumUtil
 
-import java.lang.String
-
 class QAChallengePoshiPageObject {
     val selenium = SeleniumUtil.getSelenium()
 
