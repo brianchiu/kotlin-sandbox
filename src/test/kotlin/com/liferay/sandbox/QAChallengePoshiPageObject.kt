@@ -3,7 +3,7 @@ package com.liferay.sandbox;
 import com.liferay.poshi.runner.selenium.SeleniumUtil
 
 class QAChallengePoshiPageObject {
-    val selenium = SeleniumUtil.getSelenium()
+    private val selenium = SeleniumUtil.getSelenium()
 
     fun doQAChallengeStepsWithPoshi() {
         selenium.open("http://www.liferay.com")

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement
 import java.util.concurrent.TimeUnit
 
 open class BasePageObject {
-    val webDriver = FirefoxInstance.hashi()
+    private val webDriver = FirefoxInstance.hashi()
 
     fun assertText(locator : String, value : String) {
         val webElement = getWebElement(locator)
