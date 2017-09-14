@@ -20,8 +20,13 @@ class BaseSteps {
         _basePO.open(url)
     }
 
+    @When(value = "^I enter \"([^\"]*)\" in the Alloy Editor$")
+    fun typeAlloyEditor(text : String) {
+        _basePO.typeAlloyEditor(text)
+    }
+
     @When(value = "^I enter \"([^\"]*)\" in the \"([^\"]*)\" field$")
-    fun typeInput(text: String, field: String) {
+    fun typeInput(text : String, field : String) {
         _basePO.typeInput(field, text)
     }
 }
