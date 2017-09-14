@@ -1,4 +1,6 @@
-package com.liferay.sandbox
+package com.liferay.wem.webcontent
+
+import com.liferay.base.BasePO
 
 class WebContentPO : BasePO() {
     fun add(title : String, content : String) {

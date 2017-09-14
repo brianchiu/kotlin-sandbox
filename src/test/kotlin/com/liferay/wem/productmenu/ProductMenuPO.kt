@@ -1,7 +1,10 @@
-package com.liferay.sandbox
+package com.liferay.wem.productmenu
+
+import com.liferay.base.BasePO
 
 class ProductMenuPO : BasePO() {
     fun addPage(page : String) {
+        val pageLink = "//div[@class='navbar']//a[normalize-space()='$page']"
         val publicPagesEllipsis = "//a[@data-qa-id='publicPagesOptions']"
 
         expandProductMenu()
@@ -12,7 +15,7 @@ class ProductMenuPO : BasePO() {
         typeInput("Name", page)
         clickButton("Add Page")
 
-        clickLink(page)
+        click(pageLink)
     }
 
     fun expandCategory(category : String) {

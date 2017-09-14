@@ -1,4 +1,4 @@
-package com.liferay.sandbox
+package com.liferay.foundation.login
 
 import cucumber.api.java.en.When
 

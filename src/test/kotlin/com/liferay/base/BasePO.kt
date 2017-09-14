@@ -1,4 +1,4 @@
-package com.liferay.sandbox;
+package com.liferay.base;
 
 import com.liferay.poshi.runner.selenium.SeleniumUtil
 

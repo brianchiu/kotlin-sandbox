@@ -1,4 +1,4 @@
-package com.liferay.sandbox
+package com.liferay.wem.addpanel
 
 import cucumber.api.java.en.When
 
