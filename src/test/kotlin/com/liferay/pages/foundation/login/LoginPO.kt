@@ -1,6 +1,6 @@
-package com.liferay.foundation.login
+package com.liferay.pages.foundation.login
 
-import com.liferay.base.BasePO
+import com.liferay.pages.base.BasePO
 
 class LoginPO : BasePO() {
     val userAvatar = "//*[@data-qa-id='openUserMenu'] | //span[@class='user-avatar-image']"

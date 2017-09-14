@@ -1,4 +1,4 @@
-package com.liferay.sandbox.sample;
+package com.liferay.steps.sandbox.sample;
 
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;

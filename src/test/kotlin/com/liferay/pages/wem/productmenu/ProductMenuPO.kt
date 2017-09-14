@@ -1,6 +1,6 @@
-package com.liferay.wem.productmenu
+package com.liferay.pages.wem.productmenu
 
-import com.liferay.base.BasePO
+import com.liferay.pages.base.BasePO
 
 class ProductMenuPO : BasePO() {
     fun addPage(page : String) {

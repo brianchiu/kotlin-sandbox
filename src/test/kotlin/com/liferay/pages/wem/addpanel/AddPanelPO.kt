@@ -1,6 +1,6 @@
-package com.liferay.wem.addpanel
+package com.liferay.pages.wem.addpanel
 
-import com.liferay.base.BasePO
+import com.liferay.pages.base.BasePO
 
 class AddPanelPO : BasePO() {
     fun expandAddPanel() {

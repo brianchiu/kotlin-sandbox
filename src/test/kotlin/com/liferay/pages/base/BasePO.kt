@@ -1,4 +1,4 @@
-package com.liferay.base;
+package com.liferay.pages.base;
 
 import com.liferay.poshi.runner.selenium.SeleniumUtil
 

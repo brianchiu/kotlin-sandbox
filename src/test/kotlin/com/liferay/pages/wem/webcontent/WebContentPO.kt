@@ -1,6 +1,6 @@
-package com.liferay.wem.webcontent
+package com.liferay.pages.wem.webcontent
 
-import com.liferay.base.BasePO
+import com.liferay.pages.base.BasePO
 
 class WebContentPO : BasePO() {
     fun add(title : String, content : String) {
