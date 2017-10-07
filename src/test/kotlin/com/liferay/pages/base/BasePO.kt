@@ -5,10 +5,16 @@ import com.liferay.poshi.runner.selenium.SeleniumUtil
 open class BasePO {
     private val selenium = SeleniumUtil.getSelenium()
 
-    fun assertAlloyEditorText(value : String) {
+    fun assertEditorContentText(value : String) {
         val locator = "//div[(contains(@id,'body') or contains(@id,'content')) and contains(@class,'alloy-editor-container')]//div[contains(@class,'alloy-editor-placeholder')]"
 
         assertText(locator, value)
+    }
+
+    fun assertLinkVisible(link : String) {
+        val locator = "//a[normalize-space()='$link']"
+
+        assertVisible(locator)
     }
 
     fun assertText(locator : String, value : String) {
@@ -46,6 +52,12 @@ open class BasePO {
 
     fun clickLink(link : String) {
         val locator = "//a[normalize-space()='$link']"
+
+        click(locator)
+    }
+
+    fun clickText(text : String) {
+        val locator = "//*[normalize-space()='$text']"
 
         click(locator)
     }
@@ -98,10 +110,20 @@ open class BasePO {
         type(locator, value)
     }
 
-    fun typeAlloyEditor(value : String) {
+    fun typeEditor(locator : String, value : String) {
+        waitForVisible(locator)
+        selenium.typeEditor(locator, value)
+    }
+
+    fun typeEditorContent(value : String) {
         val locator = "//div[(contains(@id,'body') or contains(@id,'content')) and contains(@class,'alloy-editor-container')]//div[contains(@class,'alloy-editor-placeholder')]"
 
-        selenium.typeEditor(locator, value)
+        typeEditor(locator, value)
+    }
+    fun typeEditorTitle(value : String) {
+        val locator = "//div[contains(@id,'titleEditor') and contains(@aria-label,'Rich Text Editor')]"
+
+        typeEditor(locator, value)
     }
 
     fun waitForElementPresent(locator : String) {

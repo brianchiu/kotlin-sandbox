@@ -23,7 +23,7 @@ class AddPanelPO : BasePO() {
         expandAddPanel()
 
         if (!isElementPresent(applicationsExpanded)) {
-            clickLink("Applications")
+            clickText("Applications")
         }
 
         assertVisible(applicationsExpanded)

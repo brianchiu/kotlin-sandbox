@@ -9,13 +9,13 @@ class WebContentPO : BasePO() {
         click(addButton)
         clickLink("Basic Web Content")
         typeInput("Title", title)
-        typeAlloyEditor(content)
+        typeEditorContent(content)
         clickButton("Publish")
     }
 
     fun view(title : String, content : String) {
         clickLink(title)
         assertInputValue("Title", title)
-        assertAlloyEditorText(content)
+        assertEditorContentText(content)
     }
 }
