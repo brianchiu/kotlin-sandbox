@@ -5,6 +5,8 @@ import com.liferay.pages.collab.blogs.BlogsPO
 import com.liferay.pages.collab.ratings.RatingsPO
 import com.liferay.pages.wem.addpanel.AddPanelPO
 import com.liferay.pages.wem.productmenu.ProductMenuPO
+import cucumber.api.java.After
+import cucumber.api.java.Before
 
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
@@ -62,18 +64,46 @@ class RateAssetSteps {
         _ratingsPO.rateAsGood()
     }
 
-    @Then(value = "^I should see the thumbs down activated")
+    @When(value = "^I unrate the entry as bad$")
+    fun i_unrate_the_entry_as_bad() {
+        val _ratingsPO = RatingsPO()
+
+        _ratingsPO.unrateAsBad()
+    }
+
+    @When(value = "^I unrate the entry as good$")
+    fun i_unrate_the_entry_as_good() {
+        val _ratingsPO = RatingsPO()
+
+        _ratingsPO.unrateAsGood()
+    }
+
+    @Then(value = "^I should see the thumbs down clicked")
     fun i_should_see_the_thumbs_down_activated() {
         val _ratingsPO = RatingsPO()
 
         _ratingsPO.viewRateAsBad()
     }
 
-    @Then(value = "^I should see the thumbs up activated")
+    @Then(value = "^I should see the thumbs down not clicked")
+    fun i_should_see_the_thumbs_down_deactivated() {
+        val _ratingsPO = RatingsPO()
+
+        _ratingsPO.viewUnrateAsBad()
+    }
+
+    @Then(value = "^I should see the thumbs up clicked")
     fun i_should_see_the_thumbs_up_activated() {
         val _ratingsPO = RatingsPO()
 
         _ratingsPO.viewRateAsGood()
+    }
+
+    @Then(value = "^I should see the thumbs up not clicked")
+    fun i_should_see_the_thumbs_up_deactivated() {
+        val _ratingsPO = RatingsPO()
+
+        _ratingsPO.viewUnrateAsGood()
     }
 
     @Then(value = "^I should see the thumbs down count display \"([^\"]*)\"$")
@@ -89,4 +119,14 @@ class RateAssetSteps {
 
         _ratingsPO.viewRateAsGoodCount(count)
     }
+//
+//    @After
+//    fun tearDown() {
+//        println("Tear Down Now")
+//    }
+//
+//    @Before
+//    fun setup() {
+//        println("Setup Now")
+//    }
 }

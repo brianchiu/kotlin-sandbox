@@ -18,18 +18,26 @@ class RatingsPO : BasePO() {
         assertVisible(thumbUpOnLocator)
     }
 
-    fun unRateAsBad() {
+    fun unrateAsBad() {
         click(thumbDownOnLocator)
         assertVisible(thumbDownOffLocator)
     }
 
-    fun unRateAsGood() {
+    fun unrateAsGood() {
         click(thumbUpOnLocator)
         assertVisible(thumbUpOffLocator)
     }
 
     fun viewRateAsBad() {
         assertVisible(thumbDownOnLocator)
+    }
+
+    fun viewUnrateAsBad() {
+        assertVisible(thumbDownOffLocator)
+    }
+
+    fun viewUnrateAsGood() {
+        assertVisible(thumbUpOffLocator)
     }
 
     fun viewRateAsBadCount(expectedCount : String) {
