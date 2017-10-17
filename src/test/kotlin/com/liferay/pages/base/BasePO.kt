@@ -1,14 +1,9 @@
-package com.liferay.sandbox;
+package com.liferay.pages.base
 
 import com.liferay.poshi.runner.selenium.SeleniumUtil
 
 open class BasePO {
     private val selenium = SeleniumUtil.getSelenium()
-
-    fun assertClick(locator : String, value : String) {
-        assertText(locator, value)
-        click(locator)
-    }
 
     fun assertText(locator : String, value : String) {
         assertVisible(locator)

@@ -1,6 +1,8 @@
-package com.liferay.sandbox
+package com.liferay.steps.base
 
 import cucumber.api.java.en.When
+
+import com.liferay.pages.base.BasePO
 
 class BaseSteps {
     private val _basePO = BasePO()
