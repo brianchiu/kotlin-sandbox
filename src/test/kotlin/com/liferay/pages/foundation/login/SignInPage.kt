@@ -26,10 +26,4 @@ class SignInPage : BasePage() {
     fun fillInPassword(password : String) {
         typeInput("Password", password)
     }
-
-    fun signIn(emailAddress : String, password : String) {
-        fillInEmailAddress(emailAddress)
-        fillInPassword(password)
-        clickSignIn()
-    }
 }
