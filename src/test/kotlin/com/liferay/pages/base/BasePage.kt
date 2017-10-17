@@ -16,6 +16,15 @@ open class BasePage {
         selenium.assertVisible(locator)
     }
 
+    fun check(locator : String) {
+        assertVisible(locator)
+        selenium.check(locator)
+    }
+
+    fun checkCheckBox(label : String) {
+        check("//label[contains(.,'$label')]/input[@type='checkbox']")
+    }
+
     fun click(locator : String) {
         assertVisible(locator)
         selenium.click(locator)
