@@ -2,7 +2,7 @@ package com.liferay.pages.base
 
 import com.liferay.poshi.runner.selenium.SeleniumUtil
 
-open class BasePO {
+open class BasePage {
     private val selenium = SeleniumUtil.getSelenium()
 
     fun assertText(locator : String, value : String) {

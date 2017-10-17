@@ -2,10 +2,10 @@ package com.liferay.steps.base
 
 import cucumber.api.java.en.When
 
-import com.liferay.pages.base.BasePO
+import com.liferay.pages.base.BasePage
 
 class BaseSteps {
-    private val _basePO = BasePO()
+    private val _basePO = BasePage()
 
     @When(value = "^I click the \"([^\"]*)\" button$")
     fun clickButton(button : String) {
