@@ -14,6 +14,6 @@ class WelcomePage(private val driver : WebDriver) {
     }
 
     fun clickSignInLink() {
-        signInLink.click()
+        signInLink?.click()
     }
 }

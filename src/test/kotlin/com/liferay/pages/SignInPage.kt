@@ -23,21 +23,21 @@ class SignInPage(private val driver: WebDriver) {
     }
 
     fun checkRememberMeCheckBox() {
-        rememberMeCheckBox.click()
+        rememberMeCheckBox?.click()
     }
 
     fun clickSignInButton() {
-        signInButton.click()
+        signInButton?.click()
     }
 
     fun fillInEmailField(email : String) {
-        emailField.clear()
-        emailField.sendKeys(email)
+        emailField?.clear()
+        emailField?.sendKeys(email)
     }
 
     fun fillInPasswordField(password : String) {
-        passwordField.clear()
-        passwordField.sendKeys(password)
+        passwordField?.clear()
+        passwordField?.sendKeys(password)
     }
 
     fun signIn(email : String, password : String) {
