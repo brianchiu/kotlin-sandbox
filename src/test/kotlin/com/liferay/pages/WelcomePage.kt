@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.PageFactory
 
 class WelcomePage(private val driver : WebDriver) {
-    @FindBy(xpath = "//a[contains(.,'Sign In')]")
+    @FindBy(className = "sign-in")
     private val signInLink : WebElement? = null
 
     init {

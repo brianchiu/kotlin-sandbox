@@ -15,7 +15,7 @@ class SignInPage(private val driver: WebDriver) {
     @FindBy(id = "_com_liferay_login_web_portlet_LoginPortlet_rememberMe")
     private val rememberMeCheckBox : WebElement? = null
 
-    @FindBy(xpath = "//button[contains(.,'Sign In')]")
+    @FindBy(css = "button[id^='_com_liferay_login_web_portlet_LoginPortlet']")
     private val signInButton : WebElement? = null
 
     init {
