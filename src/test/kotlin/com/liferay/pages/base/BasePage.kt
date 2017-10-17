@@ -31,11 +31,11 @@ open class BasePage {
     }
 
     fun clickButton(button : String) {
-        click("//button[contains(.,'$button')]")
+        click("//button[normalize-space()='$button']")
     }
 
     fun clickLink(link : String) {
-        click("//a[contains(.,'$link')]")
+        click("//a[normalize-space()='$link']")
     }
 
     fun isElementPresent(locator : String) {
@@ -52,7 +52,7 @@ open class BasePage {
     }
 
     fun typeInput(label : String, value : String) {
-        type("//div[label[contains(.,'$label')]]//input", value)
+        type("//div[label[normalize-space()='$label' or normalize-space()='$label Required']]//input", value)
     }
 
     fun typeEditor(locator : String, value : String) {
