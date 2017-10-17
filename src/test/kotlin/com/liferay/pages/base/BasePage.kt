@@ -38,8 +38,12 @@ open class BasePage {
         click("//a[normalize-space()='$link']")
     }
 
-    fun isElementPresent(locator : String) {
-        selenium.isElementPresent(locator)
+    fun isElementPresent(locator : String) : Boolean {
+        return selenium.isElementPresent(locator)
+    }
+
+    fun isVisible(locator : String) : Boolean {
+        return selenium.isVisible(locator)
     }
 
     fun open(url : String) {
