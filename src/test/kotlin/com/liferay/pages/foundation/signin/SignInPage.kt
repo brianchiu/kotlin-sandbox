@@ -1,4 +1,4 @@
-package com.liferay.pages.foundation.login
+package com.liferay.pages.foundation.signin
 
 import com.liferay.pages.base.BasePage
 
