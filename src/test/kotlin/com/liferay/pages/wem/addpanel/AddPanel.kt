@@ -6,10 +6,10 @@ class AddPanel : BasePage() {
     private val addPanel = "//div[contains(@class,'lfr-add-panel') and contains(@class,'open-admin-panel')]"
     private val plusIcon = "//*[@data-qa-id='add']"
 
-    private val addApplicationCollapse = "//div[contains(@id,'addApplicationCollapse')]"
+    private val addApplicationCollapse = "//div[contains(@id,'addApplicationCollapse') and contains(@class,'show')]"
     private val addApplicationSearchInput = "//div[contains(@id,'addApplicationCollapse')]//div[@class='input-group search-bar']"
 
-    private val addContentCollapse = "//div[contains(@id,'addContentCollapse')]"
+    private val addContentCollapse = "//div[contains(@id,'addContentCollapse') and contains(@class,'show')]"
     private val addContentSearchInput = "//div[contains(@id,'addContentCollapse')]//div[@class='input-group search-bar']"
 
     fun clickAppAdd(app : String) {
