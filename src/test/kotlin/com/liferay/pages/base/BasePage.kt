@@ -5,6 +5,10 @@ import com.liferay.poshi.runner.selenium.SeleniumUtil
 open class BasePage {
     private val selenium = SeleniumUtil.getSelenium()
 
+    fun assertLinkVisible(link : String) {
+        assertVisible("//a[normalize-space()='$link']")
+    }
+
     fun assertText(locator : String, value : String) {
         assertVisible(locator)
         selenium.waitForText(locator, value)
