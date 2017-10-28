@@ -13,7 +13,10 @@ class AddPanel : BasePage() {
     private val addContentSearchInput = "//div[contains(@id,'addContentCollapse')]//div[@class='input-group search-bar']"
 
     fun clickAppAdd(app : String) {
-        click("//span[contains(@data-search,'-$app') and contains(@class,'add-content-item')]")
+        val appAdd = "//span[contains(@data-search,'-$app') and contains(@class,'add-content-item')]"
+
+        makeVisible(appAdd)
+        click(appAdd)
     }
 
     fun expandPanel() {

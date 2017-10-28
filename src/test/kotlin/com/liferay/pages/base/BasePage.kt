@@ -2,11 +2,14 @@ package com.liferay.pages.base
 
 import com.liferay.poshi.runner.selenium.SeleniumUtil
 
+import com.liferay.utils.LocatorUtil
+
 open class BasePage {
+    private val _locatorUtil = LocatorUtil()
     private val selenium = SeleniumUtil.getSelenium()
 
     fun assertLinkVisible(link : String) {
-        assertVisible("//a[normalize-space()='$link']")
+        assertVisible(_locatorUtil.getLink(link))
     }
 
     fun assertText(locator : String, value : String) {
@@ -26,7 +29,7 @@ open class BasePage {
     }
 
     fun checkCheckBox(label : String) {
-        check("//label[contains(.,'$label')]/input[@type='checkbox']")
+        check(_locatorUtil.getCheckBox(label))
     }
 
     fun click(locator : String) {
@@ -35,11 +38,11 @@ open class BasePage {
     }
 
     fun clickButton(button : String) {
-        click("//button[normalize-space()='$button']")
+        click(_locatorUtil.getButton(button))
     }
 
     fun clickLink(link : String) {
-        click("//a[normalize-space()='$link']")
+        click(_locatorUtil.getLink(link))
     }
 
     fun isElementPresent(locator : String) : Boolean {
@@ -48,6 +51,10 @@ open class BasePage {
 
     fun isVisible(locator : String) : Boolean {
         return selenium.isVisible(locator)
+    }
+
+    fun makeVisible(locator : String) {
+        selenium.makeVisible(locator)
     }
 
     fun open(url : String) {
@@ -60,7 +67,7 @@ open class BasePage {
     }
 
     fun typeInput(label : String, value : String) {
-        type("//div[label[normalize-space()='$label' or normalize-space()='$label Required']]//input", value)
+        type(_locatorUtil.getInput(label), value)
     }
 
     fun typeEditor(locator : String, value : String) {

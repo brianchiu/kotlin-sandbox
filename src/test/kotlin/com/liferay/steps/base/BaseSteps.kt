@@ -5,25 +5,25 @@ import cucumber.api.java.en.When
 import com.liferay.pages.base.BasePage
 
 class BaseSteps {
-    private val _basePO = BasePage()
+    private val _basePage = BasePage()
 
     @When(value = "^I click the \"([^\"]*)\" button$")
     fun clickButton(button : String) {
-        _basePO.clickButton(button)
+        _basePage.clickButton(button)
     }
 
     @When(value = "^I click the \"([^\"]*)\" link$")
     fun clickLink(button : String) {
-        _basePO.clickLink(button)
+        _basePage.clickLink(button)
     }
 
     @When(value = "^I open a browser to \"(https?.+)\"$")
     fun open(url : String) {
-        _basePO.open(url)
+        _basePage.open(url)
     }
 
     @When(value = "^I enter \"([^\"]*)\" in the \"([^\"]*)\" field$")
     fun typeInput(text: String, field: String) {
-        _basePO.typeInput(field, text)
+        _basePage.typeInput(field, text)
     }
 }

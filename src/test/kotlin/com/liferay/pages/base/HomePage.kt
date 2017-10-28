@@ -10,6 +10,10 @@ class HomePage : BasePage() {
         assertVisible(userAvatar)
     }
 
+    fun assertUserSignedIn(initials : String) {
+        assertVisible("//span[@class='user-avatar-image']//span[.='$initials']")
+    }
+
     fun assertUserSignedOut() {
         assertLinkVisible("Sign In")
     }
